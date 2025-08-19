@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { AppService } from './service/app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,18 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
-  title = 'booksclientweb';
+export class AppComponent implements OnInit {
+  
+  tareas?: any[];
+
+  constructor(
+    private appService: AppService
+  ){}
+
+  ngOnInit(): void {
+      this.appService.listar()
+      .subscribe((tareas: any) => {
+        this.tareas = tareas;
+      })
+  }
 }
