@@ -5,6 +5,7 @@ import com.crudbooks.crud.repository.TareaRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -17,6 +18,7 @@ public class CrudApplication {
 		SpringApplication.run(CrudApplication.class, args);
 	}
 
+    @Bean
     public CommandLineRunner commandLineRunner(TareaRepository tareaRepository){
         return args -> {
             List<Tarea> tareasPrueba = Arrays.asList(
