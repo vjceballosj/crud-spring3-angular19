@@ -22,9 +22,9 @@ public class CrudApplication {
     public CommandLineRunner commandLineRunner(TareaRepository tareaRepository){
         return args -> {
             List<Tarea> tareasPrueba = Arrays.asList(
-                    new Tarea("Apreder Java", true, LocalDateTime.now()),
+                    new Tarea("Aprender Java", true, LocalDateTime.now()),
                     new Tarea("Inscribirme al curso ValentoDev", false, LocalDateTime.now()),
-                    new Tarea("Darle like a la página de Fabecebook", false, LocalDateTime.now()),
+                    new Tarea("Darle like a la página de Facebook", false, LocalDateTime.now()),
                     new Tarea("Suscribirme al canal de Youtube", true, LocalDateTime.now()),
                     new Tarea("Repasar el taller gratuito", false, LocalDateTime.now())
             );
